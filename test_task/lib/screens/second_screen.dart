@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_task/utilities/constant.dart';
 import 'package:test_task/widgets/drag_target_widget.dart';
+import 'package:test_task/widgets/draggable_widget.dart';
 import 'package:test_task/widgets/reusable_field.dart';
 
 class SecondScreen extends StatefulWidget {
@@ -51,25 +52,8 @@ class _SecondScreenState extends State<SecondScreen> {
                   Expanded(
                     child: _isDraggedTwo
                         ? const SizedBox.shrink()
-                        : const Draggable(
-                            data: '2',
-                            feedback: SizedBox(
-                              height: 200,
-                              width: 150,
-                              child: Material(
-                                child: ReusableField(
-                                  value: 0,
-                                  nameField: '2',
-                                  color: kInActiveFieldColour,
-                                ),
-                              ),
-                            ),
-                            childWhenDragging: SizedBox(),
-                            child: ReusableField(
-                              value: 20,
-                              nameField: '2',
-                              color: kActiveFieldColour,
-                            ),
+                        : const DraggableWidget(
+                            numberData: '2',
                           ),
                   ),
                 ],
@@ -100,25 +84,8 @@ class _SecondScreenState extends State<SecondScreen> {
                   Expanded(
                     child: _isDragged
                         ? const SizedBox.shrink()
-                        : const Draggable(
-                            data: '1',
-                            feedback: SizedBox(
-                              height: 200,
-                              width: 150,
-                              child: Material(
-                                child: ReusableField(
-                                  value: 0,
-                                  nameField: '1',
-                                  color: kInActiveFieldColour,
-                                ),
-                              ),
-                            ),
-                            childWhenDragging: SizedBox(),
-                            child: ReusableField(
-                              value: 20,
-                              nameField: '1',
-                              color: kActiveFieldColour,
-                            ),
+                        : const DraggableWidget(
+                            numberData: '1',
                           ),
                   ),
                 ],
