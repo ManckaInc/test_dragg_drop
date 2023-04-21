@@ -1,3 +1,5 @@
+/// Screen with push-button switch to second screen with 4 fields and basic application functionality.
+
 import 'package:flutter/material.dart';
 import 'package:test_task/screens/second_screen.dart';
 import 'package:test_task/utilities/constant.dart';

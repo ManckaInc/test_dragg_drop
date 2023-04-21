@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_task/screens/first_dcreen.dart';
+import 'package:test_task/screens/first_screen.dart';
 import 'package:test_task/screens/second_screen.dart';
 
 void main() {

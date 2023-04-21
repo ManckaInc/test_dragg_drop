@@ -1,16 +1,17 @@
-import 'package:flutter/material.dart';
+/// Widget template of 4 application fields, with a set of styles and text.
 
-import '../utilities/constant.dart';
+import 'package:flutter/material.dart';
+import 'package:test_task/utilities/constant.dart';
 
 class ReusableField extends StatelessWidget {
   const ReusableField({
     super.key,
     required this.nameField,
-    required this.colour,
+    required this.color,
     required this.value,
   });
   final String nameField;
-  final Color? colour;
+  final Color? color;
   final double value;
 
   @override
@@ -21,9 +22,9 @@ class ReusableField extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
-          10.0,
+          10,
         ),
-        color: colour,
+        color: color,
       ),
       child: Center(
         child: Text(

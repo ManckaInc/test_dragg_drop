@@ -1,7 +1,9 @@
+/// Screen with basic functionality. applications, uses 2 extracted widgets in separate files.
+
 import 'package:flutter/material.dart';
 import 'package:test_task/utilities/constant.dart';
-
-import '../widgets/reusable_field.dart';
+import 'package:test_task/widgets/drag_target_widget.dart';
+import 'package:test_task/widgets/reusable_field.dart';
 
 class SecondScreen extends StatefulWidget {
   static const id = 'second_dcreen';
@@ -29,24 +31,16 @@ class _SecondScreenState extends State<SecondScreen> {
       ),
       body: Center(
         child: Column(
-          children: [
+          children: <Widget>[
             Expanded(
               child: Row(
-                children: [
+                children: <Widget>[
                   Expanded(
-                    child: DragTarget(
-                      builder: (context, candidateData, rejectedData) =>
-                          ReusableField(
-                        value: 20.0,
-                        nameField: _isAccepted ? '1' : 'One',
-                        colour: _isAccepted
-                            ? kActiveFieldColour
-                            : kInActiveFieldColour,
-                      ),
-                      onWillAccept: (data) {
-                        return data == '1';
-                      },
-                      onAccept: (data) {
+                    child: DragTargetWidget(
+                      isAccepted: _isAccepted,
+                      nameFieldDigital: '1',
+                      nameFieldString: 'One',
+                      onAccept: () {
                         setState(() {
                           _isAccepted = true;
                           _isDragged = true;
@@ -60,21 +54,21 @@ class _SecondScreenState extends State<SecondScreen> {
                         : const Draggable(
                             data: '2',
                             feedback: SizedBox(
-                              height: 200.0,
-                              width: 150.0,
+                              height: 200,
+                              width: 150,
                               child: Material(
                                 child: ReusableField(
-                                  value: 0.0,
+                                  value: 0,
                                   nameField: '2',
-                                  colour: kInActiveFieldColour,
+                                  color: kInActiveFieldColour,
                                 ),
                               ),
                             ),
                             childWhenDragging: SizedBox(),
                             child: ReusableField(
-                              value: 20.0,
+                              value: 20,
                               nameField: '2',
-                              colour: kActiveFieldColour,
+                              color: kActiveFieldColour,
                             ),
                           ),
                   ),
@@ -83,55 +77,47 @@ class _SecondScreenState extends State<SecondScreen> {
             ),
             Expanded(
               child: Row(
-                children: const [
+                children: const <Widget>[
                   SizedBox(),
                 ],
               ),
             ),
             Expanded(
               child: Row(
-                children: [
+                children: <Widget>[
                   Expanded(
-                    child: DragTarget(
-                        builder: (context, candidateData, rejectedData) =>
-                            ReusableField(
-                              value: 20.0,
-                              nameField: _isAcceptedTwo ? '2' : 'Two',
-                              colour: _isAcceptedTwo
-                                  ? kActiveFieldColour
-                                  : kInActiveFieldColour,
-                            ),
-                        onWillAccept: (data) {
-                          return data == '2';
-                        },
-                        onAccept: (data) {
-                          setState(() {
-                            _isAcceptedTwo = true;
-                            _isDraggedTwo = true;
-                          });
-                        }),
-                  ),
+                      child: DragTargetWidget(
+                    isAccepted: _isAcceptedTwo,
+                    nameFieldDigital: '2',
+                    nameFieldString: 'Two',
+                    onAccept: () {
+                      setState(() {
+                        _isAcceptedTwo = true;
+                        _isDraggedTwo = true;
+                      });
+                    },
+                  )),
                   Expanded(
                     child: _isDragged
                         ? const SizedBox.shrink()
                         : const Draggable(
                             data: '1',
                             feedback: SizedBox(
-                              height: 200.0,
-                              width: 150.0,
+                              height: 200,
+                              width: 150,
                               child: Material(
                                 child: ReusableField(
-                                  value: 0.0,
+                                  value: 0,
                                   nameField: '1',
-                                  colour: kInActiveFieldColour,
+                                  color: kInActiveFieldColour,
                                 ),
                               ),
                             ),
                             childWhenDragging: SizedBox(),
                             child: ReusableField(
-                              value: 20.0,
+                              value: 20,
                               nameField: '1',
-                              colour: kActiveFieldColour,
+                              color: kActiveFieldColour,
                             ),
                           ),
                   ),

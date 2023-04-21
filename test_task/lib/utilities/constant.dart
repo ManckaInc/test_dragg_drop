@@ -1,20 +1,21 @@
+/// Constants with saved styles for widgets. All colours, sizes are collected in one file.
 import 'package:flutter/material.dart';
 
 const kFirstScreenButtonTextStyle = TextStyle(
   color: Colors.black,
-  fontSize: 15.0,
+  fontSize: 15,
   fontWeight: FontWeight.w300,
 );
 
 const kSecondScreenFieldsTextStyle = TextStyle(
   color: Colors.black,
-  fontSize: 20.0,
+  fontSize: 20,
   fontWeight: FontWeight.w300,
 );
 
 const kSecondScreenAppBarTextStyle = TextStyle(
   color: Colors.black,
-  fontSize: 20.0,
+  fontSize: 20,
   fontWeight: FontWeight.w400,
 );
 

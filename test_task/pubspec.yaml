@@ -1,5 +1,5 @@
 name: test_task
-description: A new Flutter project.
+description: Test project. There are 4 fields 2 of which are fixed, the others can be moved. Each field signed with a number corresponds to a field with a lowercase name. The functionality of the application checks if the numbered field corresponds to the field with a lowercase name.
 publish_to: 'none'
 version: 0.1.0
 
