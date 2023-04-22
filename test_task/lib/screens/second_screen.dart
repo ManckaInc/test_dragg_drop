@@ -7,7 +7,7 @@ import 'package:test_task/widgets/draggable_widget.dart';
 import 'package:test_task/widgets/reusable_field.dart';
 
 class SecondScreen extends StatefulWidget {
-  static const id = 'second_dcreen';
+  static const id = 'second_screen';
   const SecondScreen({super.key});
 
   @override
